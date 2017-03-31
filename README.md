@@ -28,7 +28,8 @@ To get this thing up and running on a local machine, you need the following:<sup
 	* By default, the script assumes a Stardog database with the name 'tutorial' running at <http://localhost:5820/tutorial> (security disabled).
 	* The database should have reasoning enabled, and "SameAs" reasoning should be set to "Full".
 	* If you want to use a different name or location (i.e. not running on localhost, port 5820) you need to set the `TUTORIAL_REPOSITORY` variable in `src/tutorial.py`
-	* Start your Stardog server with `stardog-admin server start --disable-security`
+	* The URL for the KRW groups looks like: <http://stardog.krw.d2s.labs.vu.nl/group1>
+	* If you run a local Stardog server, start it with `stardog-admin server start --disable-security`
 
 ### Starting the Tutorial
 
