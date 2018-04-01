@@ -85,65 +85,9 @@ You can run Pellet from your Terminal or Command Prompt window by running `./pel
 
 Running `./pellet.sh help` will give you basic usage information. There's also a readme.
 
-## 4. The KR on the Web Tutorial
+###4 The Stardog Triplestore
 
-* Open up a Terminal or a Command Prompt window
-* Change directory to e.g. your Documents directory (on Mac/Linux: `cd ~/Documents`, on Windows `cd C:\Users\YOURUSERNAME\Documents`)
-* Then we "clone" the source code from Github. Type: `git clone https://github.com/KRontheWeb/web-application.git`
-* Change directory to the newly created folder: `cd web-application`
-
-More details on how to run the tutorial can be found in the readme file on the GitHub page of the tutorial: <https://github.com/KRontheWeb/web-application>.
-
-
-## 5. Optional but Recommended Tools
-
-### 5.1 curl
-`curl` is a simple command line utility for (amongst others) sending HTTP requests. You may need it for testing e.g. whether content negotiation works for your dataset.
-
-* Windows users can download `curl` directly from <http://dl.uxnr.de/mirror/curl/curl-7.33.0-win64-ssl-sspi.zip>.  
-  **NB**: curl is an executable (`.exe` file) that you should explicitly call on the **command prompt**. Double clicking in an explorer window will just briefly flash a command prompt window.  
-  * Create a folder called 'curl' in the `C:\Program Files` directory,
-  * copy `curl.exe` from the unzipped file to the `C:\Program Files\curl` directory,
-  * then add the `C:\Program Files\curl` directory to the `PATH` system environment variable (in Control Panel, search for `environment variable`).
-  * Edit the variable value, different directory names should be separated by a semicolon (`;`)
-  * Start the Command Prompt (in Win 8/10 use the search) and type `curl.exe` to see whether it does anything.
-* Linux typically comes shipped with `curl`, but you may need to use the package manager of their distribution (e.g. `sudo apt-get install curl`)
-* MacOS comes shipped with `curl`
-
-You can test whether it works by going to a Terminal window, or to the Command Prompt and executing: `curl -L -H "Accept: text/turtle" "http://dbpedia.org/resource/Inside_Out_(2015_film)"`
-
-Did you see any triples?
-
-### 5.2 IPython Notebook (Jupyter)
-
-Interactive notebooks are simple and effective tools for testing small bits of your code before you integrate it in a larger application.
-
-Run `pip install jupyter` in a Terminal or the Command Prompt.
-
-Jupyter documentation is here:  <http://jupyter.readthedocs.org>.
-
-### 5.3 Virtualenv
-If you don't yet have it, it may be a good idea to install the `virtualenv` package. The advantage of using `virtualenv` is that this creates a nicely self-contained Python environment in which you can install the packages needed for your application. This way your global environment does not get clogged, and you avoid potential incompatibilities between different Python projects.
-
-Run `pip install virtualenv` in a Terminal or the Command Prompt.
-
-Have a look at the `virtualenv` page at the [Hitchhikers Guide to Python](http://docs.python-guide.org/en/latest/dev/virtualenvs/) for a good description of how you should work with virtual environments.
-
-* `pip` is shipped with Python. If Windows complains that it cannot find it, you should add the folder `C:\Python27\Scripts` to the system wide `PATH` environment variable, see above.
-* If, when installing `virtualenv`, your system complains that a directory is not writable, try running `sudo pip install virtualenv` (on Windows: right click the Command Prompt icon, and select `Run as Administrator`, then run `pip install virtualenv`)
-
-### 5.4 Git
-The **git** version control system for your platform of choice. Version control is very important when collaboratively developing code. You could also use Dropbox or equivalent, but these systems do not prevent conflicting copies. Git is the most modern version control mechanism that is currently in use by millions of developers, and [GitHub](http://github.com) is the online cloud service of choice.
-
-Try and learn [here](http://try.github.io) why and how you should use it.
-
-* Windows users can go to <https://git-scm.com> to download it
-* Linux users should use the package manager of their system (e.g. `sudo apt-get install git`)
-* MacOS users can most easily install it with Homebrew (`brew install git`) or download it from <https://git-scm.com>
-* Note: it makes sense to also install a UI-based application, such as [SourceTree](https://www.sourcetreeapp.com).
-
-### 5.5 Stardog 4.0
-We have a course-provided Stardog instance ready for you, but you may also want to experiment with the software yourself.
+In order to store and access data locally, you need an instance of a triplestore running somewhere. Ideally, this runs on some persistant server, but for the purpose of this course it is sufficient if you run a local copy.  
 
 The **Stardog** triple store (version 4 or higher):
 
@@ -153,7 +97,7 @@ The **Stardog** triple store (version 4 or higher):
 
 Official installation instructions can be found at <http://docs.stardog.com/#_quick_start_guide>
 
-##### 5.5.1 Windows
+#### 4.1 Windows
 One way to get it running:
 
 * Move or copy the unzipped directory `stardog-3.1.4` to your `Documents` folder. You now have a directory called `C:\Users\YOURUSERNAME\Documents\stardog-3.1.4`
@@ -168,7 +112,7 @@ One way to get it running:
 
 Alternative installation instructions can be found at <http://docs.stardog.com/#_quick_start_guide>
 
-##### 5.5.2 Linux/Mac
+#### 4.2 Linux/Mac
 One way to get it running:
 
 * Move or copy the unzipped directory `stardog-3.1.4` to your `Documents` folder. You now have a directory called `/Users/YOURUSERNAME/Documents/stardog-3.1.4`
@@ -187,7 +131,66 @@ export PATH=$PATH:/Users/YOURUSERNAME/Documents/stardog-3.1.4/bin
 * Whee!
 
 
-##### 5.5.3 All Platforms
+#### 4.3 All Platforms
 * Go to <http://localhost:5820>, create a new Database
 * Make sure to set reasoning to `SL` and "SameAs reasoning" to `FULL` otherwise leave the settings unchanged.
 * Done!
+
+
+## 5. The KR on the Web Tutorial
+
+* Open up a Terminal or a Command Prompt window
+* Change directory to e.g. your Documents directory (on Mac/Linux: `cd ~/Documents`, on Windows `cd C:\Users\YOURUSERNAME\Documents`)
+* Then we "clone" the source code from Github. Type: `git clone https://github.com/KRontheWeb/web-application.git`
+* Change directory to the newly created folder: `cd web-application`
+
+More details on how to run the tutorial can be found in the readme file on the GitHub page of the tutorial: <https://github.com/KRontheWeb/web-application>.
+
+
+## 6. Optional but Recommended Tools
+
+### 6.1 curl
+`curl` is a simple command line utility for (amongst others) sending HTTP requests. You may need it for testing e.g. whether content negotiation works for your dataset.
+
+* Windows users can download `curl` directly from <http://dl.uxnr.de/mirror/curl/curl-7.33.0-win64-ssl-sspi.zip>.  
+  **NB**: curl is an executable (`.exe` file) that you should explicitly call on the **command prompt**. Double clicking in an explorer window will just briefly flash a command prompt window.  
+  * Create a folder called 'curl' in the `C:\Program Files` directory,
+  * copy `curl.exe` from the unzipped file to the `C:\Program Files\curl` directory,
+  * then add the `C:\Program Files\curl` directory to the `PATH` system environment variable (in Control Panel, search for `environment variable`).
+  * Edit the variable value, different directory names should be separated by a semicolon (`;`)
+  * Start the Command Prompt (in Win 8/10 use the search) and type `curl.exe` to see whether it does anything.
+* Linux typically comes shipped with `curl`, but you may need to use the package manager of their distribution (e.g. `sudo apt-get install curl`)
+* MacOS comes shipped with `curl`
+
+You can test whether it works by going to a Terminal window, or to the Command Prompt and executing: `curl -L -H "Accept: text/turtle" "http://dbpedia.org/resource/Inside_Out_(2015_film)"`
+
+Did you see any triples?
+
+### 6.2 IPython Notebook (Jupyter)
+
+Interactive notebooks are simple and effective tools for testing small bits of your code before you integrate it in a larger application.
+
+Run `pip install jupyter` in a Terminal or the Command Prompt.
+
+Jupyter documentation is here:  <http://jupyter.readthedocs.org>.
+
+### 6.3 Virtualenv
+If you don't yet have it, it may be a good idea to install the `virtualenv` package. The advantage of using `virtualenv` is that this creates a nicely self-contained Python environment in which you can install the packages needed for your application. This way your global environment does not get clogged, and you avoid potential incompatibilities between different Python projects.
+
+Run `pip install virtualenv` in a Terminal or the Command Prompt.
+
+Have a look at the `virtualenv` page at the [Hitchhikers Guide to Python](http://docs.python-guide.org/en/latest/dev/virtualenvs/) for a good description of how you should work with virtual environments.
+
+* `pip` is shipped with Python. If Windows complains that it cannot find it, you should add the folder `C:\Python27\Scripts` to the system wide `PATH` environment variable, see above.
+* If, when installing `virtualenv`, your system complains that a directory is not writable, try running `sudo pip install virtualenv` (on Windows: right click the Command Prompt icon, and select `Run as Administrator`, then run `pip install virtualenv`)
+
+### 6.4 Git
+The **git** version control system for your platform of choice. Version control is very important when collaboratively developing code. You could also use Dropbox or equivalent, but these systems do not prevent conflicting copies. Git is the most modern version control mechanism that is currently in use by millions of developers, and [GitHub](http://github.com) is the online cloud service of choice.
+
+Try and learn [here](http://try.github.io) why and how you should use it.
+
+* Windows users can go to <https://git-scm.com> to download it
+* Linux users should use the package manager of their system (e.g. `sudo apt-get install git`)
+* MacOS users can most easily install it with Homebrew (`brew install git`) or download it from <https://git-scm.com>
+* Note: it makes sense to also install a UI-based application, such as [SourceTree](https://www.sourcetreeapp.com).
+
