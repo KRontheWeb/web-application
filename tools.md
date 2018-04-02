@@ -85,7 +85,7 @@ You can run Pellet from your Terminal or Command Prompt window by running `./pel
 
 Running `./pellet.sh help` will give you basic usage information. There's also a readme.
 
-###4 The Stardog Triplestore
+### 4 The Stardog Triplestore
 
 In order to store and access data locally, you need an instance of a triplestore running somewhere. Ideally, this runs on some persistant server, but for the purpose of this course it is sufficient if you run a local copy.  
 
