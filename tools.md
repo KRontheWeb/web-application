@@ -85,7 +85,7 @@ You can run Pellet from your Terminal or Command Prompt window by running `./pel
 
 Running `./pellet.sh help` will give you basic usage information. There's also a readme.
 
-### 4 The Stardog Triplestore
+## 4 The Stardog Triplestore
 
 In order to store and access data locally, you need an instance of a triplestore running somewhere. Ideally, this runs on some persistant server, but for the purpose of this course it is sufficient if you run a local copy.  
 
@@ -97,7 +97,7 @@ The **Stardog** triple store (version 4 or higher):
 
 Official installation instructions can be found at <http://docs.stardog.com/#_quick_start_guide>
 
-#### 4.1 Windows
+### 4.1 Windows
 One way to get it running:
 
 * Move or copy the unzipped directory `stardog-3.1.4` to your `Documents` folder. You now have a directory called `C:\Users\YOURUSERNAME\Documents\stardog-3.1.4`
@@ -112,7 +112,7 @@ One way to get it running:
 
 Alternative installation instructions can be found at <http://docs.stardog.com/#_quick_start_guide>
 
-#### 4.2 Linux/Mac
+### 4.2 Linux/Mac
 One way to get it running:
 
 * Move or copy the unzipped directory `stardog-3.1.4` to your `Documents` folder. You now have a directory called `/Users/YOURUSERNAME/Documents/stardog-3.1.4`
@@ -131,7 +131,7 @@ export PATH=$PATH:/Users/YOURUSERNAME/Documents/stardog-3.1.4/bin
 * Whee!
 
 
-#### 4.3 All Platforms
+### 4.3 All Platforms
 * Go to <http://localhost:5820>, create a new Database
 * Make sure to set reasoning to `SL` and "SameAs reasoning" to `FULL` otherwise leave the settings unchanged.
 * Done!
